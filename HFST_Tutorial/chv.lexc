@@ -1,0 +1,58 @@
+Multichar_Symbols
+
+%<n%>                ! Noun
+%<pl%>               ! Plural
+%<nom%>              ! Nominative case
+%<ins%>              ! Instrumental Case
+%<gen%>              ! General Case
+%{A%}                                 ! Ending "e" or "a"
+%{м%}                                 ! -M / -h
+%{Ă%}                                 ! -end words
+%<der_лӑх%>
+%{ъ%}				 ! Loan Words 
+%>                   ! Morpheme boundary
+
+LEXICON Root
+
+Guesser ;
+Nouns ; 
+
+LEXICON Guesser
+
+🂡%<guess%>:🂡 N ;
+
+LEXICON CASES 
+
+%<nom%>: # ;
+%<gen%>:%>%{Ă%}н # ;
+%<ins%>:%>п%{A%} # ;
+
+LEXICON PLURAL
+
+                         CASES ;
+%<pl%>:%>се%{м%} CASES ;
+
+LEXICON SUBST 
+
+!%<nom%>: # ;   
+PLURAL ; 
+
+LEXICON DER-N
+
+%<der_лӑх%>:%>л%{Ă%}х SUBST "weight: 1.0" ; 
+
+LEXICON N
+
+%<n%>: SUBST ;
+%<n%>: DER-N ;
+
+LEXICON Nouns
+
+урам:урам N ;     ! "улица"
+пакча:пакча N ;   ! "сад"
+хула:хула N ;     ! "город"
+канаш:канаш N ;   ! "совет"
+тӗс:тӗс N ;       ! "вид"
+патша:патша N ;   ! "царь"
+куҫ:куҫ N ;       ! "глаз
+специалист:специалист%{ъ%} N ; ! "специалист"

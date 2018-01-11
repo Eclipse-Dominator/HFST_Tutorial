@@ -1,0 +1,39 @@
+Multichar_Symbols
+
+%<n%>                ! Noun
+%<pl%>               ! Plural
+%<nom%>              ! Nominative case
+%<ins%>              ! Instrumental Case
+%<gen%>              ! General Case
+%{A%}				 ! Ending "e" or "a"
+%{м%}				 ! -M / -h
+%{Ă%}				 ! -end words
+%>                   ! Morpheme boundary
+
+LEXICON Root
+
+Nouns ; 
+
+LEXICON CASES 
+
+%<gen%>:%>%{Ă%}н # ;
+%<ins%>:%>п%{A%} # ;
+
+LEXICON PLURAL
+
+			 CASES ;
+%<pl%>:%>се%{м%} CASES ;
+
+LEXICON N
+
+%<n%>: PLURAL ;
+
+LEXICON Nouns
+
+урам:урам N ;     ! "улица" -> "street"
+пакча:пакча N ;   ! "сад" -> "garden"
+хула:хула N ;     ! "город" -> "city"
+канаш:канаш N ;   ! "совет" -> advice
+
+! урам<n><pl><ins>
+! пакча<n><ins>
